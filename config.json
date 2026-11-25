@@ -1,6 +1,6 @@
 {
   "supabaseUrl": "https://chjpvsmqsghhmfxdldkl.supabase.co",
-  "supabasePublishableKey": "sb_publishable_YOUR_KEY",
+  "supabasePublishableKey": "sb_publishable_bJBl1_X4up0P54GKHJdZRA_5ycdkQ0u",
   "tableName": "tasks",
   "categoriesTableName": "categories"
 }
