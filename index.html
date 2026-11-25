@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Manager Extended</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="container">
+    <header class="header">
+      <h1>Task Manager Extended</h1>
+      <p class="student">Student ID: <span id="student-id">76034</span></p>
+      <nav class="nav">
+        <a id="statistics-link" href="statistics.html">Statistics</a>
+        <a id="info-link" href="info.json">info.json</a>
+      </nav>
+    </header>
+
+    <p id="status-message" role="status" aria-live="polite"></p>
+
+    <!-- Categories -->
+    <section class="card">
+      <h2>Categories</h2>
+      <ul id="category-list" class="category-list"></ul>
+      <form id="category-form" class="inline-form">
+        <label for="category-name" class="visually-hidden">New category name</label>
+        <input type="text" id="category-name" placeholder="New category, e.g. Sport" required>
+        <button type="submit" id="category-submit">Add category</button>
+      </form>
+    </section>
+
+    <!-- Task form -->
+    <section class="card">
+      <h2 id="form-heading">Add a new task</h2>
+      <form id="task-form">
+        <label for="task-title">Title</label>
+        <input type="text" id="task-title" name="title" placeholder="e.g. Learn SQL" required>
+
+        <label for="task-description">Description</label>
+        <textarea id="task-description" name="description" rows="2" placeholder="Optional"></textarea>
+
+        <label for="task-category">Category</label>
+        <select id="task-category" name="category" required></select>
+
+        <div class="form-buttons">
+          <button type="submit" id="task-submit">Add task</button>
+          <button type="button" id="task-cancel" class="secondary" hidden>Cancel editing</button>
+        </div>
+      </form>
+    </section>
+
+    <!-- Filters + task list -->
+    <section class="card">
+      <h2>Tasks</h2>
+      <div class="filters">
+        <div>
+          <label for="filter-category">Category</label>
+          <select id="filter-category">
+            <option value="all">All categories</option>
+          </select>
+        </div>
+        <div>
+          <label for="filter-status">Status</label>
+          <select id="filter-status">
+            <option value="all">All tasks</option>
+            <option value="false">Incomplete only</option>
+            <option value="true">Completed only</option>
+          </select>
+        </div>
+      </div>
+      <p id="task-count" class="muted"></p>
+      <div id="task-list"></div>
+    </section>
+
+    <footer class="footer">
+      <span id="app-info" class="muted"></span>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
